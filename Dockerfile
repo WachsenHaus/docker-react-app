@@ -8,5 +8,6 @@ RUN npm run build
 
 #nginx를 작동시킨다.
 FROM nginx
+EXPOSE 80
 ##빌더라는 스테이지에서 오기때문에 현재 빌드된파일은 /usr/src/app/build에 올라가있다.
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html
